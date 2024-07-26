@@ -1,0 +1,8 @@
+.textEditorContainer{
+    display: flex;
+    justify-content: space-between;
+
+    .rightPanelContainer{
+        writing-mode: vertical-rl
+    }
+}
