@@ -1,10 +1,16 @@
 # TextEditor
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+Node - v18.13.0
+After cloning this repo please run npm i to install the dependencies 
+Then follow the below step to run it locally 
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Components 
+By default the component that gets loaded is Home Component which has a routerLink added which on clicking takes the user to the Main Component (You can check the routes in app.routes.ts) which has the code for the text editor
 
 ## Code scaffolding
 
