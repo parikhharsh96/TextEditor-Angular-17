@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.popupContainer{
+    mat-dialog-container {
+        border-radius: 15px;
+border: 1px solid #B1E3FF;
+background: #FFF;
+box-shadow: 0px 6px 8px 0px rgba(122, 112, 112, 0.25);
+padding: 13px;
+    }
+
+    .mat-mdc-dialog-container .mdc-dialog__surface{
+        box-shadow: none;
+    }
+   
+}
