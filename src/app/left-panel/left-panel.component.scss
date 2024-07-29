@@ -1,0 +1,76 @@
+.verticalMenuContainer{
+    writing-mode: vertical-lr;
+    display: flex;
+    border-radius: 10px;
+border: 1px solid #6CD4F7;
+background: #F8FCFF;
+gap: 3px;
+height: 100%;
+padding: 8px;
+margin-left: 7px;
+    margin-right: 12px;
+}
+
+.horizontalMenuContainer{
+    
+    padding: 8px 24px;
+    border-radius: 10px;
+border: 1px solid #B1E3FF;
+background: rgba(177, 227, 255, 0.10);
+margin-left: 7px;
+    margin-right: 12px;
+    height: 100%;
+
+    .menuItemsContainer{
+        display: flex;
+        gap: 20px;
+
+    }
+
+    .titleContainer{
+        display: flex;
+    align-items: center;
+    margin-top: 11px;
+    gap: 14px;
+
+    .title{
+        color: var(--primary-blue, #2B3674);
+font-family: "DM Sans";
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 30px; /* 214.286% */
+letter-spacing: -0.28px;
+    }
+
+    }
+
+}
+
+.example-tree-invisible {
+    display: none;
+  }
+  
+  .example-tree ul,
+  .example-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
+  
+  /*
+   * This padding sets alignment of the nested nodes.
+   */
+  .example-tree .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+  }
+  
+  /*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+  .example-tree div[role=group] > .mat-tree-node {
+    padding-left: 40px;
+  }
+  

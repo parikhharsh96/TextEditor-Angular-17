@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RightPanelComponent } from "../right-panel/right-panel.component";
+import { RightPanelComponent } from '../right-panel/right-panel.component';
 
 @Component({
   selector: 'app-text-editor',
