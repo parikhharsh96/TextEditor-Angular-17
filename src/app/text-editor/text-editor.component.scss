@@ -2,7 +2,68 @@
     display: flex;
     justify-content: space-between;
 
+    .tabsAndEditorContainer{
+        width: 100%;;
+        .tabContainer{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 5px;
+            .tab{
+                padding: 7px 15px 7px 40px;            
+            width: fit-content;
+            border: 1px solid #B1E3FF;
+            border-radius: 10px 0px 10px 10px;
+        
+            .tabName{
+                color: #252551;
+        text-align: center;
+        font-family: "DM Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 30px; /* 187.5% */
+            }
+    
+            .crossImageContainer{
+                margin-left: 30px;
+            }
+            }
+            .activeTabName{
+                background-color: rgba(177, 227, 255, 0.50);
+                border: 1 px solid #B1E3FF;
+            }
+    
+            .plusContainer{
+                margin-left: 10px;
+                cursor: pointer;
+            }
+    
+        }
+
+        .editorContainers{
+            display: flex;
+
+            .editor{
+                resize: both;
+  overflow: auto;
+            }
+
+            .hiddenTab{
+                display: none;
+            }
+            .activeTab{
+                display: block;
+            }
+        }
+       
+
+    }
+
+    
+
     .rightPanelContainer{
         writing-mode: vertical-rl
     }
 }
+

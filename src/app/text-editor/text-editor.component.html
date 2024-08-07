@@ -1,6 +1,35 @@
 <div class="textEditorContainer">
-    <div>
-        <textarea rows="50" cols="30"></textarea>
+    <div class="tabsAndEditorContainer">
+        <div class="tabContainer">
+            @for (tab of tabs; track $index) 
+            {
+                <div class="tab"  [ngClass]="{'activeTabName': activeTabIndex == $index}" (click)="tabClicked($index)">
+                    <span class="tabName">{{tab.tabName}}</span>
+                    <span class="crossImageContainer"><img src="assets/images/cross.svg" /> </span>
+                    
+                
+                </div>
+    
+            }
+            <div class="plusContainer" (click)="addTab()">
+                <span><img src="assets/images/plus.svg" /> </span>
+
+            </div>
+
+        </div>
+       
+        <div class="editorContainers">
+            @for (tab of tabs; track $index) 
+        {           
+                <app-text-editor-tab  [ngClass]="{'hiddenTab': activeTabIndex != $index, 'activeTab' : activeTabIndex == $index }"></app-text-editor-tab>
+            
+            
+        }
+
+        </div>
+        
+        
+        <!-- <textarea rows="50" cols="30"></textarea> -->
         <!-- <textarea id="editor" name="editor"></textarea> -->
     </div>
     <div class="rightPanelContainer">
