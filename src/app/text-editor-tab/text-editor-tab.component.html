@@ -1,1 +1,1 @@
-<ngx-jodit class="editor" [(value)]="value" [options]="options" #ngxJodit></ngx-jodit>
+<ngx-jodit class="editor" (joditChange)="onChange($event)" [(value)]="value" [options]="options" #ngxJodit></ngx-jodit>

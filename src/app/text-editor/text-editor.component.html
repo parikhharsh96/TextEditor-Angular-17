@@ -6,7 +6,7 @@
                 <div class="tab"  [ngClass]="{'activeTabName': activeTabIndex == $index}" (click)="tabClicked($index)">
                     <span class="tabName">{{tab.tabName}}</span>
                     <span class="crossImageContainer"><img src="assets/images/cross.svg" /> </span>
-                    
+                                       
                 
                 </div>
     
@@ -15,13 +15,17 @@
                 <span><img src="assets/images/plus.svg" /> </span>
 
             </div>
+            <div (click)="onSplitClick()">
+                <span><mat-icon>call_split</mat-icon></span>
+            </div>
 
-        </div>
+        </div>       
        
         <div class="editorContainers">
             @for (tab of tabs; track $index) 
         {           
-                <app-text-editor-tab  [ngClass]="{'hiddenTab': activeTabIndex != $index, 'activeTab' : activeTabIndex == $index }"></app-text-editor-tab>
+                <app-text-editor-tab [value]="tab.value" [index]="$index" (textValue)="handleTextValueUpdate($event)"
+                 [ngClass]="{'hiddenTab': activeTabIndex != $index, 'activeTab' : activeTabIndex == $index }"></app-text-editor-tab>
             
             
         }
@@ -32,6 +36,47 @@
         <!-- <textarea rows="50" cols="30"></textarea> -->
         <!-- <textarea id="editor" name="editor"></textarea> -->
     </div>
+    @if (isSplitOn) {
+        <div class="tabsAndEditorContainer">
+            <div class="tabContainer">
+                @for (tab of tabs; track $index) 
+                {
+                    <div class="tab"  [ngClass]="{'activeTabName': activeSplitTabIndex == $index}" (click)="tabClickedSplit($index)">
+                        <span class="tabName">{{tab.tabName}}</span>
+                        <span class="crossImageContainer"><img src="assets/images/cross.svg" /> </span>
+                                           
+                    
+                    </div>
+        
+                }
+                <div class="plusContainer" (click)="addTab()">
+                    <span><img src="assets/images/plus.svg" /> </span>
+    
+                </div>
+                <div (click)="onSplitClick()">
+                    <span><mat-icon>call_split</mat-icon></span>
+                </div>
+    
+            </div>       
+           
+            <div class="editorContainers">
+                @for (tab of tabs; track $index) 
+            {           
+                    <app-text-editor-tab [value]="tab.value" [index]="$index" (textValue)="handleTextValueUpdate($event)"
+                     [ngClass]="{'hiddenTab': activeSplitTabIndex != $index, 'activeTab' : activeSplitTabIndex == $index }"></app-text-editor-tab>
+                
+                
+            }
+    
+            </div>
+            
+            
+            <!-- <textarea rows="50" cols="30"></textarea> -->
+            <!-- <textarea id="editor" name="editor"></textarea> -->
+        </div>
+       
+
+    }
     <div class="rightPanelContainer">
         <app-right-panel></app-right-panel>
         

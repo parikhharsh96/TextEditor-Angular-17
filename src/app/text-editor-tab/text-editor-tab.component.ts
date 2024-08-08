@@ -1,4 +1,4 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component,EventEmitter,Input,Output,ViewChild } from '@angular/core';
 import {JoditConfig, NgxJoditComponent} from 'ngx-jodit';
 import {Config} from 'jodit/esm/config';
 import 'jodit/esm/plugins/bold/bold.js';
@@ -23,8 +23,10 @@ Jodit.plugins.add('resizeHandler',resizeHandler);
 })
 export class TextEditorTabComponent {
 
-  value = 'Some text';
+  @Input() value:any;
   _optionsStr = '';
+  @Input() index:number=0;
+  @Output() textValue=new EventEmitter<Object>();
 
   @ViewChild('ngxJodit') ngxJodit?: NgxJoditComponent;
   
@@ -48,5 +50,12 @@ export class TextEditorTabComponent {
   allowResizeY: true,
   
   };
+
+  onChange(event:any)
+  {
+    console.log(event)
+    this.textValue.emit({value:this.value,index:this.index});
+
+  }
 
 }

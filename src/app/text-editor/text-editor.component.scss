@@ -3,12 +3,13 @@
     justify-content: space-between;
 
     .tabsAndEditorContainer{
-        width: 100%;;
+        width: 40%;;
         .tabContainer{
             display: flex;
             align-items: center;
             margin-bottom: 10px;
             gap: 5px;
+            overflow: auto;
             .tab{
                 padding: 7px 15px 7px 40px;            
             width: fit-content;
