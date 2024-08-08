@@ -44,6 +44,7 @@
 
         .editorContainers{
             display: flex;
+            overflow: auto;
 
             .editor{
                 resize: both;

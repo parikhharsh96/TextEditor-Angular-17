@@ -6,13 +6,10 @@ import 'jodit/esm/plugins/add-new-line/add-new-line.js';
 import 'jodit/esm/plugins/fullsize/fullsize.js';
 import de, { Resize } from 'jodit/esm/langs/de.js';
 import {Jodit} from 'jodit';
-import * as resizeHandler from 'jodit/esm/plugins/resize-handler/resize-handler.js';
+import 'jodit/esm/plugins/resize-handler/resize-handler.js';
 import { HTMLTagNames } from 'jodit/types/types';
 
-
-
 Jodit.lang.de = de;
-Jodit.plugins.add('resizeHandler',resizeHandler);
 
 @Component({
   selector: 'app-text-editor-tab',
@@ -22,6 +19,13 @@ Jodit.plugins.add('resizeHandler',resizeHandler);
   styleUrl: './text-editor-tab.component.scss'
 })
 export class TextEditorTabComponent {
+
+  options : JoditConfig = {
+    height: 300,
+    allowResizeX: true,
+  allowResizeY: true,
+  
+  };
 
   @Input() value:any;
   _optionsStr = '';
@@ -44,12 +48,7 @@ export class TextEditorTabComponent {
     }
   }
 
-  options : JoditConfig = {
-    height: 300,
-    allowResizeX: true,
-  allowResizeY: true,
-  
-  };
+ 
 
   onChange(event:any)
   {
